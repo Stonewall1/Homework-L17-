@@ -1,40 +1,53 @@
 package task2;
 
-public class Document {
-    private String docNumber;
-    private String email;
-    private String telephoneNumber;
+import java.util.ArrayList;
+import java.util.List;
 
-    public String getDocNumber() {
+public class Document {
+    private   List<String> docNumber = new ArrayList<>();
+    private   List<String> email = new ArrayList<>();
+    private  List<String> telephoneNumber = new ArrayList<>();
+
+    public  void documentEmailAddition(String line){
+        email.add(line);
+    }
+    public  void documentNumberAddition(String line){
+        docNumber.add(line);
+    }
+    public  void documentTelephoneAddition(String line){
+        telephoneNumber.add(line);
+    }
+
+    public List<String> getDocNumber() {
         return docNumber;
     }
 
-    public void setDocNumber(String docNumber) {
+    public void setDocNumber(List<String> docNumber) {
         this.docNumber = docNumber;
     }
 
-    public String getEmail() {
+    public List<String> getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(List<String> email) {
         this.email = email;
     }
 
-    public String getTelephoneNumber() {
+    public List<String> getTelephoneNumber() {
         return telephoneNumber;
     }
 
-    public void setTelephoneNumber(String telephoneNumber) {
+    public void setTelephoneNumber(List<String> telephoneNumber) {
         this.telephoneNumber = telephoneNumber;
     }
 
     @Override
     public String toString() {
         return "Document{" +
-                "docNumber='" + docNumber + '\'' +
-                ", email='" + email + '\'' +
-                ", telephoneNumber='" + telephoneNumber + '\'' +
+                "docNumber=" + docNumber +
+                ", email=" + email +
+                ", telephoneNumber=" + telephoneNumber +
                 '}';
     }
 }
